@@ -1,0 +1,23 @@
+<div class="container mt-5">
+  <div class="card p-3 mb-3">
+      <h5 class=""><b>{{adsoyad}}</b></h5>
+  </div>
+  <div class="row">
+
+      <div *ngFor="let ilan of kayitlar" class="col-lg-4 mb-3">
+          <div [routerLink]="['/kayitdetay', ilan.key]" class="card aktifCounter">
+              <div class="card-body">
+                  <h5 class="card-title">{{ilan.baslik}}</h5>
+                  <p class="card-text">{{ilan.icerik}}</p>
+                  <small class="text-muted"><b>İletişim {{ilan.iletisim}}</b></small>
+              </div>
+              <div class="card-footer" style="display: flex; align-items: center; justify-content: space-around;">
+                  <small class="text-muted"><b>{{ilan.fiyat}}</b></small>
+                  <small class="text-success "><b>{{ilan.sehir}}</b></small>
+                  <small class="text-warning "><b>{{ilan.tip}} </b></small>
+                  <small class="text-danger "><b>{{ilan.durum}}</b></small>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

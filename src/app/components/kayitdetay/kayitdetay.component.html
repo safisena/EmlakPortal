@@ -1,0 +1,31 @@
+<div class="container mt-5">
+  <div class="row">
+      <div class="col-md-12">
+
+          <button class="btn btn-outline-primary" [routerLink]="['/']">Kayıtlara Geri Dön</button>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-md-12">
+
+          <div class="card p-5">
+              <div class="card-body">
+                  <h5 class="card-title">{{secKayit.baslik}}</h5>
+                  <p class="card-text">{{secKayit.icerik}}</p>
+                  <ul class="list-group list-group-flush">
+                      <li class="list-group-item">Fiyat: {{secKayit.fiyat}}</li>
+                      <li class="list-group-item">Durum: {{secKayit.durum}}</li>
+                      <li class="list-group-item">Tip: {{secKayit.tip}}</li>
+                      <li class="list-group-item">İletişim: {{secKayit.iletisim}}</li>
+                  </ul>
+                  <div class="p-3">
+                      <button class="btn btn-outline-warning btn-sm ml-3" *ngIf="secKayit.uid == uid" [routerLink]="['/kayitduzenle',secKayit.key]">Düzenle</button>
+                      <button class="btn btn-outline-danger btn-sm ml-3" *ngIf="secKayit.uid == uid" [routerLink]="['/kayitsil',secKayit.key]">Sil</button>
+                  </div>
+              </div>
+
+
+          </div>
+      </div>
+  </div>
+</div>
